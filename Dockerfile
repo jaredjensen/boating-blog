@@ -1,8 +1,8 @@
-FROM jekyll/builder:3.8 as builder
+FROM jekyll/builder:stable as builder
 
 WORKDIR /build
 
-COPY Gemfile Gemfile.lock gulpfile.js package.json yarn.lock ./
+COPY Gemfile Gemfile.lock package.json yarn.lock ./
 COPY src src
 
 RUN bundle install
