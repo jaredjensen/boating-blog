@@ -67,12 +67,15 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  jekyll (>= 3.8.5)
+  jekyll (~> 4.2.2)
   jekyll-feed (~> 0.6)
   jekyll-paginate (~> 1.1.0)
   jekyll-sitemap
   tzinfo-data
   webrick (~> 1.7)
+
+RUBY VERSION
+   ruby 3.0.0p0
 
 BUNDLED WITH
    2.3.15
