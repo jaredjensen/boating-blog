@@ -38,4 +38,15 @@ yarn serve:jekyll
 
 ## Deployment
 
-The site is deployed to Digital Ocean. Commits to `master` will trigger a build using the Dockerfile, which is an nginx image that can run the site standalone. The Digital Ocean build is configured to copy files out of the nginx site folder in the image.
+The site is deployed to Digital Ocean. Commits to `main` will trigger a build and deployment.  The Dockerfile build is not used by DO.
+
+```bash
+# Install the CLI
+brew install doctl
+
+# Enter access token generated at https://cloud.digitalocean.com/account/api/tokens
+doctl auth init
+
+# Update spec
+doctl app update ea995903-38fd-4d55-b4f0-0a4e9d7f50dc --spec ./do/app.yaml
+```
