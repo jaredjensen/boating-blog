@@ -3,9 +3,12 @@
   "name": "slave-to-the-boat",
   "version": "1.0.0",
   "description": "Blog for our family boating adventures",
+  "license": "MIT",
   "scripts": {
-    "build": "bundle exec jekyll build -d ./build",
-    "serve": "bundle exec jekyll serve -d ./build --watch"
+    "build": "bundle exec jekyll build -d ./public",
+    "serve": "bundle exec jekyll serve -d ./public --watch",
+    "build-docker": "docker build --tag slavetotheboat:local .",
+    "serve-docker": "docker run -d -p 8080:80 slavetotheboat:local"
   },
   "author": "Jared Jensen",
   "dependencies": {
@@ -15,7 +18,7 @@
     "sass": "^1.52.1",
     "startbootstrap-clean-blog": "5.1.0"
   },
-  "devDependencies": {
-    "browser-sync": "2.26.14"
+  "peerDependencies": {
+    "popper.js": "1.16"
   }
 }
