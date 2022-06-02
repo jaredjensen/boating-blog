@@ -1,10 +1,10 @@
-# Boating Blog
+# Slave to the Boat
 
 ## Installation
 
 ```bash
 # Clone this repo
-git clone git@github.com:jaredjensen/boating-blog.git
+git clone git@github.com:jaredjensen/slave-to-the-boat.git
 
 # Install dependencies
 yarn install
