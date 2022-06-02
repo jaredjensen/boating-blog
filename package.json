@@ -1,11 +1,11 @@
 {
-  "title": "Boating Blog",
-  "name": "boating-blog",
+  "title": "Slave to the Boat",
+  "name": "slave-to-the-boat",
   "version": "1.0.0",
   "description": "Blog for our family boating adventures",
   "scripts": {
-    "build": "cd src && bundle exec jekyll build",
-    "serve:jekyll": "cd src && bundle exec jekyll serve --watch"
+    "build": "bundle exec jekyll build -d ./build",
+    "jekyll": "bundle exec jekyll serve --watch"
   },
   "author": "Jared Jensen",
   "dependencies": {

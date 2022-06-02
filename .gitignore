@@ -1,5 +1,5 @@
+build/
 node_modules/
-src/_site
 
 .DS_Store
 .jekyll-*
