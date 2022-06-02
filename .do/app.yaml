@@ -16,4 +16,3 @@ spec:
       branch: main
       deploy_on_push: true
       repo: jaredjensen/slave-to-the-boat
-    source_dir: /src
