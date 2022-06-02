@@ -1,18 +1,17 @@
-spec:
-  # domains:
-  # - domain: slavetotheboat.com
-  #   type: PRIMARY
-  #   zone: slavetotheboat.com
-  # - domain: www.slavetotheboat.com
-  #   type: ALIAS
-  #   zone: slavetotheboat.com
-  name: slave-to-the-boat
-  region: nyc
-  static_sites:
-  - name: slave-to-the-boat
-    environment_slug: jekyll
-    build_command: bundle exec jekyll build -d ./public
-    github:
-      branch: main
-      deploy_on_push: true
-      repo: jaredjensen/slave-to-the-boat
+# domains:
+# - domain: slavetotheboat.com
+#   type: PRIMARY
+#   zone: slavetotheboat.com
+# - domain: www.slavetotheboat.com
+#   type: ALIAS
+#   zone: slavetotheboat.com
+name: slave-to-the-boat
+region: nyc
+static_sites:
+- name: slave-to-the-boat
+  environment_slug: jekyll
+  build_command: bundle exec jekyll build -d ./public
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: jaredjensen/slave-to-the-boat
