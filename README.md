@@ -16,7 +16,7 @@ gem install jekyll bundler
 bundle install
 
 # Serve locally
-yarn jekyll
+yarn serve
 ```
 
 ## Deployment
