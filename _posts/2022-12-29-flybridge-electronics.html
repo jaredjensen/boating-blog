@@ -7,7 +7,7 @@ background: /img/posts/bg-flybridge-electronics.jpg
 tags: rendezvous projects
 ---
 
-I wanted to set up better weather and systems monitoring using [SignalK](https://signalk.org/) to capture all the NMEA2000 data and make it accessible to various devices. Since Raspberry Pis were impossible to find with the supply chain issues, I picked up an older Intel NUC from a buddy who had a couple to spare. And since all the connections I needed were in the flybridge electronics "locker" behind the upper helm, this was the natural place to install it.
+I wanted to set up better weather and systems monitoring using [SignalK](https://signalk.org/){:target="_blank"} to capture all the NMEA2000 data and make it accessible to various devices. Since Raspberry Pis were impossible to find with the supply chain issues, I picked up an older Intel NUC from a buddy who had a couple to spare. And since all the connections I needed were in the flybridge electronics "locker" behind the upper helm, this was the natural place to install it.
 
 The boat came with great electronics, but the installation seemed temporary and what I think of as the "I'll make this better later" variety. Specifically, most components were not permanently mounted and were held in place only by the rats nest of wiring.
 
@@ -42,7 +42,7 @@ There were three breakers controlling circuits at the flybridge:
 2. "Internet" which was directly wired to the Pepwave MAX HD2 cell modem
 3. "VHF Radio" which powered a distribution block connected to only the AIS; it also powered the upper and lower helm VHF radios and phones
 
-Because I was planning to use the NUC primarily for remote monitoring, I decided to add a second BlueSea fuse block for the "Internet" circuit so the Pepwave and NUC would be switched together. I put a [12V-19V converter](https://www.amazon.com/gp/product/B00S0UFR14) in front of the NUC to provide stable voltage and avoid problems with reboots due to voltage dips.
+Because I was planning to use the NUC primarily for remote monitoring, I decided to add a second BlueSea fuse block for the "Internet" circuit so the Pepwave and NUC would be switched together. I put a [12V-19V converter](https://www.amazon.com/gp/product/B00S0UFR14){:target="_blank"} in front of the NUC to provide stable voltage and avoid problems with reboots due to voltage dips.
 
 I relabeled two of the DC panel breakers to "Flybridge Electronics" and "VHF/AIS/Phones" so it was more clear what they were controlling. I suppose I should rename the third one to something like "Internet/NUC".
 
@@ -54,4 +54,4 @@ Once I was satisfied the layout was going to work, I reconnected all wires using
 ![Components mounted in new location](/img/posts/flybridge-wiring-final.jpg)
 <span class="caption text-muted">While not perfect, it's a huge improvement.</span>
 
-I set up the NUC to run SignalK and Grafana in Docker and used [Tailscale](https://tailscale.com/) for remote VPN access. This accomplished my goal of remote access to time-series dashboards, similar to what [the previous owner had set up](https://seabits.com/engine-and-power-dashboards/). I'll share more on that in a future post.
+I set up the NUC to run SignalK and Grafana in Docker and used [Tailscale](https://tailscale.com/){:target="_blank"} for remote VPN access. This accomplished my goal of remote access to time-series dashboards, similar to what [the previous owner had set up](https://seabits.com/engine-and-power-dashboards/){:target="_blank"}. I'll share more on that in a future post.
