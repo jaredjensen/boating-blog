@@ -1,6 +1,10 @@
 // Import Core Clean Blog SCSS
 @import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
 
+#mainNav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .container img {
   max-width: 100%;
 }
@@ -14,9 +18,25 @@ blockquote {
 
 .post-body  {
   a {
-    color: #0085A1
+    color: #0085A1;
   }
   a:visited {
-    color: #0085A1
+    color: #0085A1;
   }
+}
+
+#mainNav .mobile {
+  display: block;
+}  
+#mainNav .full {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #mainNav .mobile {
+    display: none;
+  }  
+  #mainNav .full {
+    display: block;
+  }  
 }
