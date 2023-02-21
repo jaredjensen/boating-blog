@@ -29,11 +29,17 @@ blockquote {
   }
 }
 
-#mainNav .mobile {
-  display: block;
-}  
-#mainNav .full {
-  display: none;
+#mainNav, #mainNav.is-fixed {
+  .logo-white {
+    display: none;
+  }  
+  .logo-black {
+    display: block;
+  }
+}
+
+#mainNav .navbar-nav > li.nav-item > a {
+  text-align: right;
 }
 
 header.masthead {
@@ -119,11 +125,11 @@ article.post-preview {
 
 @media (min-width: 992px) {
   #mainNav {
-    .mobile {
-      display: none;
-    }  
-    .full {
+    .logo-white {
       display: block;
+    }  
+    .logo-black {
+      display: none;
     }
   }
 
