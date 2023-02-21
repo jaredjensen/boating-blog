@@ -5,63 +5,87 @@ layout: default
 <!-- Page Header -->
 {% if page.background %}
 <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
-  {% else %}
-  <header class="masthead">
-    {% endif %}
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>{{ site.title }}</h1>
-            {% if site.description %}
-            <span class="subheading">{{ site.description }}</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
+{% else %}
+<header class="masthead">
+  {% endif %}
+  <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>{{ site.title }}</h1>
+          {% if site.description %}
+          <span class="subheading">{{ site.description }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-        {{ content }}
+{% assign newestPosts = site.posts | sort: 'date' | reverse | limit : 5 %}
 
-        <!-- Home Post List -->
-        {% assign newestPosts = site.posts | sort: 'date' | reverse | limit : 5 %}
-        {% for post in newestPosts %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-12 mx-auto">
+      {% for post in newestPosts %}
+      {% if post.tags contains "featured" %}
 
-        <article class="post-preview">
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+      <article class="post-preview featured">
+        <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+          <div class="preview-image" style="background-image:url('{{ post.preview }}');"></div>
+          <div class="preview-body">
             <h2 class="post-title">{{ post.title }}</h2>
             {% if post.subtitle %}
             <h3 class="post-subtitle">{{ post.subtitle }}</h3>
             {% else %}
             <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
             {% endif %}
-          </a>
-          <p class="post-meta">Posted by
-            {% if post.author %}
-            {{ post.author }}
+            <p class="post-meta">Posted on
+              {{ post.date | date: '%B %-d, %Y' }} &middot; {% include read_time.html content=post.content %}            
+            </p>
+          </div>
+        </a>
+      </article>
+
+      {% endif %}
+      {% endfor %}
+
+      <div class="featured-separator"></div>
+
+    </div>
+    <div class="col-lg-4 col-md-12 mx-auto">
+
+      {{ content }}
+
+      {% for post in newestPosts %}
+      {% unless post.tags contains "featured" %}
+
+      <article class="post-preview">
+        <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+          <div class="preview-image" style="background-image:url('{{ post.preview }}');"></div>
+          <div class="preview-body">
+            <h2 class="post-title">{{ post.title }}</h2>
+            {% if post.subtitle %}
+            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
             {% else %}
-            {{ site.author }}
+            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
             {% endif %}
-            on
-            {{ post.date | date: '%B %-d, %Y' }} &middot; {% include read_time.html content=post.content %}            
-          </p>
-        </article>
+            <p class="post-meta">Posted on
+              {{ post.date | date: '%B %-d, %Y' }} &middot; {% include read_time.html content=post.content %}            
+            </p>
+          </div>
+        </a>
+      </article>
 
-        <hr>
+      {% endunless %}
+      {% endfor %}
 
-        {% endfor %}
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
-        </div>
-
+      <!-- Pager -->
+      <div class="clearfix" style="margin-top: 2rem">
+        <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
       </div>
+
     </div>
   </div>
+</div>

@@ -1,6 +1,10 @@
 // Import Core Clean Blog SCSS
 @import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
 
+html {
+  font-size: 16px;
+}
+
 #mainNav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -32,11 +36,116 @@ blockquote {
   display: none;
 }
 
+header.masthead {
+  margin-bottom: 0;
+
+  .page-heading {
+    h1 {
+      font-size: 2rem;
+    }
+    .subheading {
+      font-size: 1rem;
+    }
+  }
+}
+
+article.post-preview {
+  background-color: #eee;
+  background-image: none;
+  border-radius: 0.5em;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  padding: 0;
+  
+  .preview-image {
+    background-position: center center;
+    border-bottom: 3px solid #ccc;
+    height: 8em;
+    opacity: 1;
+  }
+
+  .preview-body {
+    padding: 1em;
+
+    .post-title {
+      color: #000;
+      font-size: 1.2em;
+    }
+    .post-subtitle {
+      color: #000;
+      font-size: 1em;
+      font-weight: 300;
+    }
+    .post-meta {
+      color: #999;
+      font-size: 0.8em;
+      margin: 1em 0 0;
+    }
+  }
+
+  &.featured {
+    .preview-image {
+      height: 12em;
+    }
+  }
+}
+
+.featured-separator {
+  border-top: 1px solid #ddd;
+  margin: 3rem 0 1rem;
+}
+
+@media (min-width: 600px) {
+  header.masthead {
+    .page-heading {
+      h1 {
+        font-size: 3rem;
+      }
+      .subheading {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  article.post-preview {
+    margin-top: 2rem;
+    
+    .post-meta {
+      font-size: 0.8em;
+    }
+  }
+}
+
 @media (min-width: 992px) {
-  #mainNav .mobile {
+  #mainNav {
+    .mobile {
+      display: none;
+    }  
+    .full {
+      display: block;
+    }
+  }
+
+  header.masthead {
+    .page-heading h1 {
+      font-size: 4rem;
+    }
+  }
+
+  article.post-preview {
+    font-size: 1.2rem;
+
+    &.featured {
+      font-size: 2rem;
+          
+      .post-meta {
+        font-size: 0.7em;
+      }
+    }
+  }
+
+  .featured-separator {
     display: none;
-  }  
-  #mainNav .full {
-    display: block;
-  }  
+  }
 }
