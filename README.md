@@ -23,6 +23,7 @@ yarn serve
 
 1. Create a file, e.g. `/_posts/2023-04-15-boats-are-fun.html`
 2. Add front matter:
+
    ```yaml
    ---
    layout: post
@@ -30,8 +31,10 @@ yarn serve
    subtitle: "You should get one!"
    date: 2023-04-15
    background: '/img/posts/bg-boats-are-fun.jpg'
+   preview: '/img/posts/boats-are-fun-preview.jpg'
    ---
    ```
+
 3. Create the 1900 × 1069 header image and store at `/img/posts/bg-boats-are-fun.jpg`
 4. Create any post body images as 730px wide and store at `/img/posts/boats-are-fun-something.jpg`
 
