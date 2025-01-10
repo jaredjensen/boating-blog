@@ -6,11 +6,11 @@ baseurl:            "/"
 url:                "https://slavetotheboat.com"
 
 # Social Profiles
-twitter_username:   
+twitter_username:
 github_username:    jaredjensen
-facebook_username:  snarkcon5
-instagram_username:  
-linkedin_username:
+facebook_username:
+instagram_username:
+linkedin_username:  jaredljensen
 
 # Add your google-analytics ID here to activate google analytics
 google_analytics:   # UA-XXXXXXXXX-X # out your google-analytics code
@@ -28,5 +28,5 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
 
-kramdown:  
+kramdown:
   parse_block_html: true
