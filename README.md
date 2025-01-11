@@ -2,9 +2,13 @@
 
 ## Setup
 
-Install `ruby` as described [here](https://jekyllrb.com/docs/installation/macos/). Then install and run this site:
+Install [ruby](https://jekyllrb.com/docs/installation/macos/) and [rbenv](https://rbenv.org/), then:
 
-```bash
+```sh
+ruby_ver=3.3.6 # or whatever is in Gemfile
+rbenv install $ruby_ver
+rbenv local $ruby_ver
+
 # Clone this repo
 git clone git@github.com:jaredjensen/slave-to-the-boat.git
 
@@ -42,7 +46,7 @@ yarn serve
 
 The site is deployed to Digital Ocean. Commits to `main` will trigger a build and deployment. Deployments should use the app spec defined in the `.do` folder, but the spec can also be manually updated using the DO CLI:
 
-```bash
+```sh
 # Install the CLI
 brew install doctl
 
